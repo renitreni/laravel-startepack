@@ -21,6 +21,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('users/table', [UsersController::class, 'table'])->name('users.table');
         Route::post('users/assign/Role', [UsersController::class, 'assignRole'])->name('assign.role');
         Route::post('users/reset/pass', [UsersController::class, 'resetPass'])->name('users.reset.pass');
+        Route::post('users/change/pass', [UsersController::class, 'changePass'])->name('users.change.pass');
     });
 
     Route::middleware(['can:roles'])->group(function () {

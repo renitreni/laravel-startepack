@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ChangePassRequest;
 use App\Http\Requests\UsersStoreRequest;
 use App\Http\Requests\UsersUpdateRequest;
 use Carbon\Carbon;
@@ -89,6 +90,15 @@ class UsersController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
+
+        return ['success' => true];
+    }
+
+    public function changePass(ChangePassRequest $request)
+    {
+        User::query()->where('id', auth()->id())->update([
+            'password' => Hash::make($request->new_password)
+        ]);
 
         return ['success' => true];
     }

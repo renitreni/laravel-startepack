@@ -87,26 +87,7 @@
             errors: null,
         },
         methods: {
-            register() {
-                var $this = this;
-                axios.post('{{ route('users.store') }}', this.overview).then(function(response) {
-                    $this.overview = {
-                        name: '',
-                        email: '',
-                        password: '',
-                        password_confirmation: ''
-                    };
-                    $this.errors = null;
-                    Swal.fire(
-                        'Success!',
-                        'Operation saved.',
-                        'success'
-                    );
-                }).catch(function(reponse) {
-                    $this.errors = reponse.response.data.errors
-                    console.log($this.errors)
-                });
-            },
+            @isset($overview)
             update() {
                 var $this = this;
                 axios.put('{{ route('users.update', ['user' => $id]) }}', this.overview).then(function(
@@ -159,6 +140,28 @@
                     console.log($this.errors)
                 });
             }
+            @else
+            register() {
+                var $this = this;
+                axios.post('{{ route('users.store') }}', this.overview).then(function(response) {
+                    $this.overview = {
+                        name: '',
+                        email: '',
+                        password: '',
+                        password_confirmation: ''
+                    };
+                    $this.errors = null;
+                    Swal.fire(
+                        'Success!',
+                        'Operation saved.',
+                        'success'
+                    );
+                }).catch(function(reponse) {
+                    $this.errors = reponse.response.data.errors
+                    console.log($this.errors)
+                });
+            },
+            @endisset
         },
         mounted() {
             var $this = this;
