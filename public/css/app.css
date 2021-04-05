@@ -4991,30 +4991,6 @@ div.dt-buttons a.btn.processing:after {
 }
 
 @charset "UTF-8";
-.auth-background-holder {
-  background: url("/images/splash-image.jpg") no-repeat center center fixed !important;
-}
-
-.app-btn-primary {
-  background: #358eb4 !important;
-  color: #fff !important;
-  border-color: #358eb4 !important;
-}
-
-a {
-  color: #358eb4 !important;
-  text-decoration: none !important;
-}
-
-.form-check-input:checked {
-  background-color: #15a362 !important;
-  border-color: #15a362 !important;
-}
-
-#user-dropdown-toggle {
-  font-size: 0.8rem !important;
-}
-
 /*!
  * Bootstrap v5.0.0-beta2 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

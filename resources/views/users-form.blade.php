@@ -78,89 +78,89 @@
                 overview: {!! $overview[0] !!},
             @else
                 overview: {
-                    name: '',
-                    email: '',
-                    password: '',
-                    password_confirmation: ''
+                name: '',
+                email: '',
+                password: '',
+                password_confirmation: ''
                 },
             @endisset
             errors: null,
         },
         methods: {
             @isset($overview)
-            update() {
+                update() {
                 var $this = this;
                 axios.put('{{ route('users.update', ['user' => $id]) }}', this.overview).then(function(
-                    response) {
-                    $this.errors = null;
-                    Swal.fire(
-                        'Success!',
-                        'Operation saved.',
-                        'success'
-                    );
+                response) {
+                $this.errors = null;
+                Swal.fire(
+                'Success!',
+                'Operation saved.',
+                'success'
+                );
                 }).catch(function(reponse) {
-                    $this.errors = reponse.response.data.errors
-                    console.log($this.errors)
+                $this.errors = reponse.response.data.errors
+                console.log($this.errors)
                 });
-            },
-            destroy() {
+                },
+                destroy() {
                 var $this = this;
 
                 Swal.fire({
-                    title: 'Do you want to DELETE?',
-                    showDenyButton: true,
-                    showConfirmButton: false,
-                    showCancelButton: true,
-                    denyButtonText: `Delete`,
+                title: 'Do you want to DELETE?',
+                showDenyButton: true,
+                showConfirmButton: false,
+                showCancelButton: true,
+                denyButtonText: `Delete`,
                 }).then((result) => {
-                    /* Read more about isConfirmed, isDenied below */
-                    if (result.isDenied) {
-                        axios.delete('{{ route('users.destroy', ['user' => $id]) }}', {})
-                            .then(function(response) {
-                                window.location = "{{ route('users.index') }}"
-                            }).catch(function(reponse) {
-                                $this.errors = reponse.response.data.errors
-                                console.log($this.errors)
-                            });
-                    }
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isDenied) {
+                axios.delete('{{ route('users.destroy', ['user' => $id]) }}', {})
+                .then(function(response) {
+                window.location = "{{ route('users.index') }}"
+                }).catch(function(reponse) {
+                $this.errors = reponse.response.data.errors
+                console.log($this.errors)
                 });
-            },
-            resetPass() {
+                }
+                });
+                },
+                resetPass() {
                 var $this = this;
                 axios.post('{{ route('users.reset.pass') }}', this.overview).then(function(
-                    response) {
-                    $this.errors = null;
-                    Swal.fire(
-                        'Success!',
-                        'Operation saved.',
-                        'success'
-                    );
+                response) {
+                $this.errors = null;
+                Swal.fire(
+                'Success!',
+                'Operation saved.',
+                'success'
+                );
                 }).catch(function(reponse) {
-                    $this.errors = reponse.response.data.errors
-                    console.log($this.errors)
+                $this.errors = reponse.response.data.errors
+                console.log($this.errors)
                 });
-            }
+                }
             @else
-            register() {
+                register() {
                 var $this = this;
                 axios.post('{{ route('users.store') }}', this.overview).then(function(response) {
-                    $this.overview = {
-                        name: '',
-                        email: '',
-                        password: '',
-                        password_confirmation: ''
-                    };
-                    $this.errors = null;
-                    Swal.fire(
-                        'Success!',
-                        'Operation saved.',
-                        'success'
-                    );
+                $this.overview = {
+                name: '',
+                email: '',
+                password: '',
+                password_confirmation: ''
+                };
+                $this.errors = null;
+                Swal.fire(
+                'Success!',
+                'Operation saved.',
+                'success'
+                );
                 }).catch(function(reponse) {
-                    $this.errors = reponse.response.data.errors
-                    console.log($this.errors)
+                $this.errors = reponse.response.data.errors
+                console.log($this.errors)
                 });
-            },
+                },
             @endisset
         },
         mounted() {

@@ -5,15 +5,16 @@
 @endsection
 
 
-@section('content')<div class="row g-4 settings-section">
+@section('content')
+    <div class="row g-4 settings-section">
         <div id="app" class="row">
             <div class="col-12 col-md-4">
                 <h3 class="section-title">{{ $name }}</h3>
                 <div class="section-intro">Please select abilities for this role.</div>
             </div>
             <div class="col-12 col-md-8">
-                <div class="app-card app-card-settings shadow-sm p-4">
-                    <div class="app-card-body">
+                <div class="card shadow-sm p-4">
+                    <div class="card-body">
                         <form class="settings-form">
                             <div class="form-check form-switch mb-3">
                                 <input class="form-check-input" type="checkbox" value="accounts" v-model="roles">
@@ -24,7 +25,7 @@
                                 <label class="form-check-label">Roles</label>
                             </div>
                             <div class="mt-3">
-                                <button @click="saveAbilities" type="button" class="btn app-btn-primary">Save
+                                <button @click="saveAbilities" type="button" class="btn btn-primary">Save
                                     Changes</button>
                             </div>
                         </form>

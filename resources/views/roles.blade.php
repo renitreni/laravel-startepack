@@ -23,7 +23,7 @@
                         v-model="role_name">
                 </div>
                 <div class="col-auto">
-                    <button @click="newRoleName" type="button" class="btn btn-success">
+                    <button @click="newRoleName" type="button" class="btn btn-success text-white">
                         <i class="fa fa-plus"></i> Add New Role
                     </button>
                 </div>
@@ -72,7 +72,8 @@
                         },
                         {
                             data: function(value) {
-                               return '<a href="/roles/abilities/' + value.name + '" class="btn btn-sm btn-link">' + value.name + '</a>'
+                                return '<a href="/roles/abilities/' + value.name +
+                                    '" class="btn btn-sm btn-link">' + value.name + '</a>'
                             },
                             title: 'Name'
                         },

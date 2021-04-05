@@ -2,8 +2,9 @@
 
 This is a laravel starter-pack for admin template:
 
-- The admin template used is portal Admin
-- Supports Bootstrap 5 - alpha 2
+- AdminToolKit
+- Bootstrap 5
 - Vuejs
-- Bouncer packe by John Silbert
+- Bouncer package by John Silbert
 - laravel/ui --auth
+- SEO Tools: composer require artesaos/seotools

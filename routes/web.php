@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\SettingsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,12 +17,15 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+    Route::resource('settings', SettingsController::class);
+    Route::post('settings/change/pass', [SettingsController::class, 'changePass'])->name('settings.change.pass');
+    Route::post('settings/delete/account', [SettingsController::class, 'deleteAccount'])->name('settings.delete.account');
+
     Route::middleware(['can:accounts'])->group(function () {
         Route::resource('users', UsersController::class);
         Route::post('users/table', [UsersController::class, 'table'])->name('users.table');
         Route::post('users/assign/Role', [UsersController::class, 'assignRole'])->name('assign.role');
         Route::post('users/reset/pass', [UsersController::class, 'resetPass'])->name('users.reset.pass');
-        Route::post('users/change/pass', [UsersController::class, 'changePass'])->name('users.change.pass');
     });
 
     Route::middleware(['can:roles'])->group(function () {

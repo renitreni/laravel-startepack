@@ -93,13 +93,4 @@ class UsersController extends Controller
 
         return ['success' => true];
     }
-
-    public function changePass(ChangePassRequest $request)
-    {
-        User::query()->where('id', auth()->id())->update([
-            'password' => Hash::make($request->new_password)
-        ]);
-
-        return ['success' => true];
-    }
 }
