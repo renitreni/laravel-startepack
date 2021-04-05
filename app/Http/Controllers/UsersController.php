@@ -81,7 +81,7 @@ class UsersController extends Controller
     public function resetPass(Request $request)
     {
         User::where('id', $request->id)->update([
-            'password' => Hash::make('passwordsecret'),
+            'password' => Hash::make('secret'),
         ]);
 
         return ['success' => true];

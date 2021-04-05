@@ -5,7 +5,7 @@
         </a>
 
         <ul class="sidebar-nav">
-            <li class="sidebar-header">
+            <li class="sidebar-header pt-2">
                 Components
             </li>
             <li class="sidebar-item @if (in_array(Route::current()->uri, ['home'])) active @endif">

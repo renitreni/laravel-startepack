@@ -1,163 +1,190 @@
-<div class="app-header-inner">
-    <div class="container-fluid py-2">
-        <div class="app-header-content">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-auto">
-                    <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img">
-                            <title>Menu</title>
-                            <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"
-                                d="M4 7h22M4 15h22M4 23h22"></path>
-                        </svg>
-                    </a>
-                </div>
-                <!--//col-->
-                <div class="search-mobile-trigger d-sm-none col">
-                    <i class="search-mobile-trigger-icon fas fa-search"></i>
-                </div>
-                <!--//col-->
-                {{-- <div class="app-search-box col"> --}}
-                {{-- <form class="app-search-form"> --}}
-                {{-- <input type="text" placeholder="Search..." name="search" class="form-control search-input"> --}}
-                {{-- <button type="submit" class="btn search-btn btn-primary" value="Search"><i --}}
-                {{-- class="fas fa-search"></i></button> --}}
-                {{-- </form> --}}
-                {{-- </div><!--//app-search-box--> --}}
+<nav class="navbar navbar-expand navbar-light navbar-bg">
+    <a class="sidebar-toggle d-flex">
+        <i class="hamburger align-self-center"></i>
+    </a>
 
-                <div class="app-utilities col-auto">
-                    <div class="row">
-                        {{-- <div class="col-auto pt-2">
-                            <div class="app-utility-item app-notifications-dropdown dropdown">
-                                <a class="dropdown-toggle no-toggle-arrow pt-2" id="notifications-dropdown-toggle"
-                                   data-toggle="dropdown" href="#" role="button" aria-expanded="false"
-                                   title="Notifications">
-                                    <i class="far fa-bell fs-4"></i>
-                                    <span class="icon-badge">3</span>
-                                </a><!--//dropdown-toggle-->
+    {{-- <form class="d-none d-sm-inline-block">
+        <div class="input-group input-group-navbar">
+            <input type="text" class="form-control" placeholder="Search…" aria-label="Search">
+            <button class="btn" type="button">
+                <i class="align-middle" data-feather="search"></i>
+            </button>
+        </div>
+    </form> --}}
 
-                                <div class="dropdown-menu p-0" aria-labelledby="notifications-dropdown-toggle">
-                                    <div class="dropdown-menu-header p-3">
-                                        <h5 class="dropdown-menu-title mb-0">Notifications</h5>
-                                    </div><!--//dropdown-menu-title-->
-                                    <div class="dropdown-menu-content">
-                                        <div class="item p-3">
-                                            <div class="row gx-2 justify-content-between align-items-center">
-                                                <div class="col-auto">
-                                                    <img class="profile-image" src="https://via.placeholder.com/300"
-                                                         alt="">
-                                                </div><!--//col-->
-                                                <div class="col">
-                                                    <div class="info">
-                                                        <div class="desc">Amy shared a file with you. Lorem ipsum dolor sit
-                                                            amet, consectetur adipiscing elit.
-                                                        </div>
-                                                        <div class="meta"> 2 hrs ago</div>
-                                                    </div>
-                                                </div><!--//col-->
-                                            </div><!--//row-->
-                                            <a class="link-mask" href="notifications.html"></a>
-                                        </div><!--//item-->
-                                        <div class="item p-3">
-                                            <div class="row gx-2 justify-content-between align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="app-icon-holder">
-                                                        <svg width="1em" height="1em" viewBox="0 0 16 16"
-                                                             class="bi bi-receipt" fill="currentColor"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd"
-                                                                  d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zm.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51z"/>
-                                                            <path fill-rule="evenodd"
-                                                                  d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"/>
-                                                        </svg>
-                                                    </div>
-                                                </div><!--//col-->
-                                                <div class="col">
-                                                    <div class="info">
-                                                        <div class="desc">You have a new invoice. Proin venenatis interdum
-                                                            est.
-                                                        </div>
-                                                        <div class="meta"> 1 day ago</div>
-                                                    </div>
-                                                </div><!--//col-->
-                                            </div><!--//row-->
-                                            <a class="link-mask" href="notifications.html"></a>
-                                        </div><!--//item-->
-                                        <div class="item p-3">
-                                            <div class="row gx-2 justify-content-between align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="app-icon-holder icon-holder-mono">
-                                                        <svg width="1em" height="1em" viewBox="0 0 16 16"
-                                                             class="bi bi-bar-chart-line" fill="currentColor"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd"
-                                                                  d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"/>
-                                                        </svg>
-                                                    </div>
-                                                </div><!--//col-->
-                                                <div class="col">
-                                                    <div class="info">
-                                                        <div class="desc">Your report is ready. Proin venenatis interdum
-                                                            est.
-                                                        </div>
-                                                        <div class="meta"> 3 days ago</div>
-                                                    </div>
-                                                </div><!--//col-->
-                                            </div><!--//row-->
-                                            <a class="link-mask" href="notifications.html"></a>
-                                        </div><!--//item-->
-                                        <div class="item p-3">
-                                            <div class="row gx-2 justify-content-between align-items-center">
-                                                <div class="col-auto">
-                                                    <img class="profile-image" src="https://via.placeholder.com/300"
-                                                         alt="">
-                                                </div><!--//col-->
-                                                <div class="col">
-                                                    <div class="info">
-                                                        <div class="desc">James sent you a new message.</div>
-                                                        <div class="meta"> 7 days ago</div>
-                                                    </div>
-                                                </div><!--//col-->
-                                            </div><!--//row-->
-                                            <a class="link-mask" href="notifications.html"></a>
-                                        </div><!--//item-->
-                                    </div><!--//dropdown-menu-content-->
-
-                                    <div class="dropdown-menu-footer p-2 text-center">
-                                        <a href="notifications.html">View all</a>
-                                    </div>
-
-                                </div><!--//dropdown-menu-->
-                            </div><!--//app-utility-item-->
-                        </div> --}}
-                        <div class="col-auto pt-2">
-                            <div class="app-utility-item app-user-dropdown dropdown">
-                                <a class="dropdown-toggle" id="user-dropdown-toggle" data-toggle="dropdown" href="#"
-                                    role="button" aria-expanded="false">
-                                    <i class="fas fa-circle" style="color: #10f789"></i>
-
-                                    {{ auth()->user()->name }}
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-                                    <li>
-                                        <!-- Button trigger modal -->
-                                        <a href="#" class="dropdown-item" onclick="ex.myModal.show()">
-                                            Change Password
-                                        </a>
-                                    </li>
-                                    {{-- <li><a class="dropdown-item" href="#">Settings</a></li> --}}
-                                    <li><a class="dropdown-item" href="{{ route('logout') }}">Log Out</a></li>
-                                </ul>
+    <div class="navbar-collapse collapse">
+        <ul class="navbar-nav navbar-align">
+            {{-- <li class="nav-item dropdown">
+                <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+                    <div class="position-relative">
+                        <i class="align-middle" data-feather="bell"></i>
+                        <span class="indicator">4</span>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+                    aria-labelledby="alertsDropdown">
+                    <div class="dropdown-menu-header">
+                        4 New Notifications
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <i class="text-danger" data-feather="alert-circle"></i>
+                                </div>
+                                <div class="col-10">
+                                    <div class="text-dark">Update completed</div>
+                                    <div class="text-muted small mt-1">Restart server 12 to complete the
+                                        update.</div>
+                                    <div class="text-muted small mt-1">30m ago</div>
+                                </div>
                             </div>
-                            <!--//app-user-dropdown-->
-                        </div>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <i class="text-warning" data-feather="bell"></i>
+                                </div>
+                                <div class="col-10">
+                                    <div class="text-dark">Lorem ipsum</div>
+                                    <div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate
+                                        hendrerit et.</div>
+                                    <div class="text-muted small mt-1">2h ago</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <i class="text-primary" data-feather="home"></i>
+                                </div>
+                                <div class="col-10">
+                                    <div class="text-dark">Login from 192.186.1.8</div>
+                                    <div class="text-muted small mt-1">5h ago</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <i class="text-success" data-feather="user-plus"></i>
+                                </div>
+                                <div class="col-10">
+                                    <div class="text-dark">New connection</div>
+                                    <div class="text-muted small mt-1">Christina accepted your request.
+                                    </div>
+                                    <div class="text-muted small mt-1">14h ago</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="dropdown-menu-footer">
+                        <a href="#" class="text-muted">Show all notifications</a>
                     </div>
                 </div>
-                <!--//app-utilities-->
-            </div>
-            <!--//row-->
-        </div>
-        <!--//app-header-content-->
+            </li> --}}
+            {{-- <li class="nav-item dropdown">
+                <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown"
+                    data-bs-toggle="dropdown">
+                    <div class="position-relative">
+                        <i class="align-middle" data-feather="message-square"></i>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+                    aria-labelledby="messagesDropdown">
+                    <div class="dropdown-menu-header">
+                        <div class="position-relative">
+                            4 New Messages
+                        </div>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <img src="img/avatars/avatar-5.jpg"
+                                        class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
+                                </div>
+                                <div class="col-10 ps-2">
+                                    <div class="text-dark">Vanessa Tucker</div>
+                                    <div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu
+                                        tortor.</div>
+                                    <div class="text-muted small mt-1">15m ago</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <img src="img/avatars/avatar-2.jpg"
+                                        class="avatar img-fluid rounded-circle" alt="William Harris">
+                                </div>
+                                <div class="col-10 ps-2">
+                                    <div class="text-dark">William Harris</div>
+                                    <div class="text-muted small mt-1">Curabitur ligula sapien euismod
+                                        vitae.</div>
+                                    <div class="text-muted small mt-1">2h ago</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <img src="img/avatars/avatar-4.jpg"
+                                        class="avatar img-fluid rounded-circle" alt="Christina Mason">
+                                </div>
+                                <div class="col-10 ps-2">
+                                    <div class="text-dark">Christina Mason</div>
+                                    <div class="text-muted small mt-1">Pellentesque auctor neque nec urna.
+                                    </div>
+                                    <div class="text-muted small mt-1">4h ago</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <img src="img/avatars/avatar-3.jpg"
+                                        class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
+                                </div>
+                                <div class="col-10 ps-2">
+                                    <div class="text-dark">Sharon Lessman</div>
+                                    <div class="text-muted small mt-1">Aenean tellus metus, bibendum sed,
+                                        posuere ac, mattis non.</div>
+                                    <div class="text-muted small mt-1">5h ago</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="dropdown-menu-footer">
+                        <a href="#" class="text-muted">Show all messages</a>
+                    </div>
+                </div>
+            </li> --}}
+            <li class="nav-item dropdown">
+                <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
+                    data-bs-toggle="dropdown">
+                    <i class="align-middle" data-feather="settings"></i>
+                </a>
+
+                <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
+                    data-bs-toggle="dropdown">
+                    <span class="fas fa-circle" style="color: rgb(101, 245, 113)"></span>
+                    {{ auth()->user()->name }}
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    {{-- <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1"
+                            data-feather="user"></i> Profile</a>
+                    <a class="dropdown-item" href="#"><i class="align-middle me-1"
+                            data-feather="pie-chart"></i> Analytics</a>
+                    <div class="dropdown-divider"></div> --}}
+                    <a class="dropdown-item" href="{{ route('settings.index') }}"><i class="align-middle me-1"
+                            data-feather="settings"></i> Settings & Privacy</a>
+                    <a class="dropdown-item" href="#"><i class="align-middle me-1"
+                            data-feather="help-circle"></i> Help Center</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ route('logout') }}">Log out</a>
+                </div>
+            </li>
+        </ul>
     </div>
-    <!--//container-fluid-->
-</div>
-<!--//app-header-inner-->
+</nav>

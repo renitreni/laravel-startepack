@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Silber\Bouncer\Bouncer;
@@ -17,10 +18,11 @@ class DatabaseSeeder extends Seeder
     public function run(Bouncer $bouncer)
     {
         $user = User::firstOrCreate([
-            'name'     => 'Super Administrator',
-            'email'    => 'admin@site.com',
-            'tos'      => 'agreed',
-            'password' => Hash::make('secret'),
+            'name'              => 'Super Administrator',
+            'email'             => 'admin@site.com',
+            'tos'               => 'agreed',
+            'email_verified_at' => Carbon::now(),
+            'password'          => Hash::make('secret'),
         ]);
 
         $bouncer->role()->firstOrCreate([

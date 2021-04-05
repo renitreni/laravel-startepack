@@ -1,15 +1,15 @@
 @extends('layouts.external')
 
 @section('content')
-    <div class="app-auth-body mx-auto">
-        <div class="app-auth-branding mb-4">
+    <div class="mx-auto">
+        <div class="text-center mb-4">
             <a class="app-logo" href="{{ route('home') }}">
-                <img class="logo-icon mr-2" src="{{ asset('images/logo/te-logo.png') }}"alt="logo">
+                <img class="mr-2" src="{{ asset('images/logo/te-logo.png') }}" alt="logo" width="128" height="128">
             </a>
         </div>
-        <h2 class="auth-heading text-center mb-4">{{ __('Reset Password') }}</h2>
+        <h2 class="text-center mb-4">{{ __('Reset Password') }}</h2>
 
-        <div class="auth-intro mb-4 text-center">Enter your email address below. We'll email you a link to a page where
+        <div class="mb-4 text-center">Enter your email address below. We'll email you a link to a page where
             you can easily create a new password.
         </div>
 
@@ -34,7 +34,7 @@
                     @enderror
                 </div><!--//form-group-->
                 <div class="text-center">
-                    <button type="submit" class="btn app-btn-primary btn-block theme-btn mx-auto">
+                    <button type="submit" class="btn btn-primary btn-block shadow mx-auto">
                         {{ __('Send Password Reset Link') }}
                     </button>
                 </div>
