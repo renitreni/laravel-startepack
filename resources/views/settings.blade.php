@@ -202,19 +202,7 @@
                                 'success'
                             );
                         }).catch(excp => {
-                            var errors = excp.response.data.errors;
-                            var message = '';
-                            $.each(errors, function(key, idx) {
-                                message += '<strong>' + key + '</strong> <br>'
-                                $.each(idx, function(key2, idx2) {
-                                    message += '* ' + idx2 + '<br>'
-                                });
-                            });
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Please try again.',
-                                html: message,
-                            });
+                            catchError(excp)
                         }).then(params => {
                             $this.password_form = {
                                 password: '',
@@ -233,19 +221,7 @@
                                 'success'
                             );
                         }).catch(excp => {
-                            var errors = excp.response.data.errors;
-                            var message = '';
-                            $.each(errors, function(key, idx) {
-                                message += '<strong>' + key + '</strong> <br>'
-                                $.each(idx, function(key2, idx2) {
-                                    message += '* ' + idx2 + '<br>'
-                                });
-                            });
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Please try again.',
-                                html: message,
-                            });
+                            catchError(excp)
                         }).then(params => {
                             $this.password_form = {
                                 password: '',
