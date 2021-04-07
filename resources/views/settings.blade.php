@@ -36,7 +36,9 @@
                             <h5 class="card-title fw-bold">Public info</h5>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form action="{{ route('settings.update', ['setting' => auth()->id()]) }}" method="POST">
+                                @csrf
+                                @method('PUT')
                                 <div class="row">
                                     <div class="col-md-12 row">
                                         <div class="col-auto">
@@ -49,7 +51,7 @@
                                         <div class="col-auto">
                                             <div class="mb-3">
                                                 <label class="form-label" for="inputUsername">Name</label>
-                                                <input type="text" class="form-control" value="{{ auth()->user()->name }}">
+                                                <input type="text" class="form-control" name="name" value="{{ auth()->user()->name }}">
                                             </div>
                                         </div>
                                         {{-- <div class="mb-3">
@@ -76,7 +78,6 @@
 
                                 <button type="submit" class="btn btn-primary">Save changes</button>
                             </form>
-
                         </div>
                     </div>
 

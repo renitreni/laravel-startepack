@@ -35,4 +35,13 @@ class SettingsController extends Controller
 
         return redirect('/');
     }
+
+    public function update($setting, Request $request)
+    {
+        User::where('id', $setting)->update([
+            'name'  => $request->name,
+        ]);
+
+        return redirect()->route('settings.index');
+    }
 }
