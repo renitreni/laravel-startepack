@@ -30,7 +30,14 @@
 
             <main class="content">
                 <div class="container-fluid p-0">
-                    <h1 class="mb-4">@yield('title')</h1>
+                    <div class="row mb-2 mb-xl-3">
+                        <div class="col-auto d-none d-sm-block">
+                            <h3>@yield('title')</h3>
+                        </div>
+                        <div class="col-auto ms-auto text-end mt-n1">
+                            @yield('breadcrumbs')
+                        </div>
+                    </div>
                     @yield('content')
                 </div>
             </main>
