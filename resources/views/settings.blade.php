@@ -6,16 +6,14 @@
 
 @section('content')
     <div id="app" class="row">
-        <div class="col-md-3 col-xl-2">
-
+        <div class="col-12 col-md-auto">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title mb-0 fw-bold">Profile Settings</h5>
+                    <h5 class="card-title mb-0 fw-bold fs-4">Profile Settings</h5>
                 </div>
-
                 <div class="list-group list-group-flush" role="tablist">
                     <a class="list-group-item list-group-item-action active" data-bs-toggle="list" href="#account"
-                        role="tab">
+                       role="tab">
                         Account
                     </a>
                     <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#password" role="tab">
@@ -28,36 +26,39 @@
             </div>
         </div>
 
-        <div class="col-md-9 col-xl-10">
+        <div class="col-12 col-md">
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="account" role="tabpanel">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title fw-bold">Public info</h5>
+                            <h5 class="card-title fw-bold fs-4">Public info</h5>
                         </div>
                         <div class="card-body">
                             <form action="{{ route('settings.update', ['setting' => auth()->id()]) }}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
-                                    <div class="col-md-12 row">
-                                        <div class="col-auto">
-                                            <div class="mb-3">
-                                                <label class="form-label" for="inputUsername">E-mail</label>
-                                                <input type="text" class="form-control"
-                                                    value="{{ auth()->user()->email }}" name="email" readonly>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="inputUsername">E-mail</label>
+                                                    <input type="text" class="form-control"
+                                                           value="{{ auth()->user()->email }}" name="email" readonly>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="mb-3">
-                                                <label class="form-label" for="inputUsername">Name</label>
-                                                <input type="text" class="form-control" name="name" value="{{ auth()->user()->name }}">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="inputUsername">Name</label>
+                                                    <input type="text" class="form-control" name="name"
+                                                           value="{{ auth()->user()->name }}">
+                                                </div>
                                             </div>
+                                            {{-- <div class="mb-3">
+                                                <label class="form-label" for="inputUsername">Biography</label>
+                                                <textarea rows="2" class="form-control" name="biography"></textarea>
+                                            </div> --}}
                                         </div>
-                                        {{-- <div class="mb-3">
-                                            <label class="form-label" for="inputUsername">Biography</label>
-                                            <textarea rows="2" class="form-control" name="biography"></textarea>
-                                        </div> --}}
                                     </div>
                                     {{-- <div class="col-md-4">
                                         <div class="text-center">
@@ -138,41 +139,45 @@
                 </div>
                 <div class="tab-pane fade" id="password" role="tabpanel">
                     <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title fw-bold fs-4">Password</h5>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">Password</h5>
                             <div class="mb-3">
                                 <label class="form-label" for="inputPasswordCurrent">Current password</label>
                                 <input type="password" class="form-control" name="password"
-                                    v-model="password_form.password">
+                                       v-model="password_form.password">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="inputPasswordNew">New password</label>
                                 <input type="password" class="form-control" name="new_password"
-                                    v-model="password_form.new_password">
+                                       v-model="password_form.new_password">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="inputPasswordNew2">Verify password</label>
                                 <input type="password" class="form-control" name="password_confirmation"
-                                    v-model="password_form.password_confirmation">
+                                       v-model="password_form.password_confirmation">
                             </div>
-                            <button type="button" class="btn btn-primary shadow" @click="changePass">Save changes</button>
+                            <button type="button" class="btn btn-primary shadow" @click="changePass">Save changes
+                            </button>
                         </div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="delete" role="tabpanel">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">Delete Account</h5>
+                            <h5 class="card-title fw-bold fs-4">Delete Account</h5>
                             <div class="mb-3">
                                 <div class="row">
                                     <div class="col-auto">
                                         <label class="form-label" for="inputPasswordCurrent">Password</label>
                                         <input type="password" class="form-control" name="password"
-                                            v-model="password_form.password">
+                                               v-model="password_form.password">
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-danger shadow" @click="deletaAccount">Delete Account</button>
+                            <button type="button" class="btn btn-danger shadow" @click="deletaAccount">Delete Account
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -203,14 +208,14 @@
                                 'success'
                             );
                         }).catch(excp => {
-                            catchError(excp)
-                        }).then(params => {
-                            $this.password_form = {
-                                password: '',
-                                new_password: '',
-                                password_confirmation: ''
-                            };
-                        });
+                        catchError(excp)
+                    }).then(params => {
+                        $this.password_form = {
+                            password: '',
+                            new_password: '',
+                            password_confirmation: ''
+                        };
+                    });
                 },
                 deletaAccount() {
                     var $this = this;
@@ -222,14 +227,14 @@
                                 'success'
                             );
                         }).catch(excp => {
-                            catchError(excp)
-                        }).then(params => {
-                            $this.password_form = {
-                                password: '',
-                                new_password: '',
-                                password_confirmation: ''
-                            };
-                        });
+                        catchError(excp)
+                    }).then(params => {
+                        $this.password_form = {
+                            password: '',
+                            new_password: '',
+                            password_confirmation: ''
+                        };
+                    });
 
                 }
             },

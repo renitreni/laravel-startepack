@@ -95,6 +95,10 @@
                             title: 'Name'
                         },
                         {
+                            data: 'email',
+                            title: 'E-mail'
+                        },
+                        {
                             data: function(value) {
                                 if (value.role_title != true) {
                                     return '<span class="roleModal badge bg-primary">' +

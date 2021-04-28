@@ -29,6 +29,7 @@ class UsersController extends Controller
             return [
                 'id'            => $value->id,
                 'name'          => $value->name,
+                'email'          => $value->email,
                 'created_at'    => Carbon::parse($value->created_at)->format('F j, Y'),
                 'role_name'     => !isset($role_name[0]['name']) ?: $role_name[0]['name'],
                 'role_title'    => !isset($role_name[0]['title']) ?: $role_name[0]['title'],
